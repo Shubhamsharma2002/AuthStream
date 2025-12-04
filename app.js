@@ -4,6 +4,8 @@ import cors from "cors";
 
 const server = express();
 
+
+
 server.use(
     cors({
         origin: [process.env.FRONTEND_URL],
