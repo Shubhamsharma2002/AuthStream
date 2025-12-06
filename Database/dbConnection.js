@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 // uri in .env
+
+
 const uri = process.env.URI;
 
 const ConnectDb = () => {
