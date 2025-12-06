@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 
 const uri = process.env.URI;
 
+
 const ConnectDb = () => {
   mongoose
     .connect(uri, {
