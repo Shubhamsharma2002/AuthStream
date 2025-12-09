@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 
-
 const userSchema = new mongoose.Schema(
   {
     name: String,
@@ -22,16 +21,16 @@ const userSchema = new mongoose.Schema(
 );
 
 // for password encryption
-userSchema.pre("save",async function (next){
-    if(!this.isModified("password")){
-        next();
-    }
-    this.password = await bcrypt.hash(this.password,10);
-})
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  this.password = await bcrypt.hash(this.password, 10);
+});
 
 //  for verifying password
-userSchema.methods.comparePassword = async function(enterPassword) {
-     return await bcrypt.compare(enterPassword,this.password)
-}
+userSchema.methods.comparePassword = async function (enterPassword) {
+  return await bcrypt.compare(enterPassword, this.password);
+};
 
-export const User = mongoose.model("User", userSchema)
+export const User = mongoose.model("User", userSchema);
