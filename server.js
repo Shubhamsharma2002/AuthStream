@@ -3,8 +3,6 @@ import { server } from "./app.js";
 
 
 const port = process.env.PORT || 8000;
-
 server.listen(port, () => {
     console.log(`Server is listening on port ${port} 🚀`);
-  
 });
